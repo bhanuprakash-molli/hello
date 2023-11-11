@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>The man who moved a mountain</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time in a small village nestled between rolling hills and lush meadows, there lived a young girl named Maya. Maya was known for her infectious laughter and boundless curiosity. However, as the years passed, the vibrancy in her eyes began to dim. Life's challenges weighed heavily on her, and she found herself trapped in a cycle of monotony.
+
+One day, as Maya strolled through the village square, she noticed an old man sitting on a weathered bench. His eyes sparkled with a wisdom that transcended the wrinkles on his face. Intrigued, Maya approached him.
+
+"Good day, young one," the old man greeted with a warm smile.
+
+"Good day, sir," Maya replied. "What brings you to our village?"
+
+The old man chuckled softly. "I've traveled far and wide, seeking stories and sharing wisdom. Perhaps I can share a tale with you."
+
+Eagerly, Maya sat beside the old man, and he began to weave a story of a distant land where dreams were the currency of the realm. In this land, there was a magical tree called the "Tree of Motivation." Legend had it that anyone who touched its leaves would be infused with an unwavering determination to pursue their dreams.
+
+Maya listened intently, her imagination ignited by the old man's words. Inspired, she decided to embark on a journey to find the mythical Tree of Motivation. The old man handed her a simple map and whispered, "May your heart guide you, for the truest motivation lies within."
+
+The journey was arduous, filled with challenges that tested Maya's resolve. Yet, with each obstacle, she found newfound strength within herself. She encountered wise mentors, faced fears, and learned to dance in the rhythm of perseverance.
+
+Finally, after traversing mountains and crossing rivers, Maya arrived at the heart of the enchanted forest where the Tree of Motivation stood tall. Its leaves shimmered in hues of gold and emerald, and a gentle breeze whispered encouragement.
+
+With a trembling hand, Maya reached out and touched the leaves. In that moment, a surge of energy coursed through her veins. She felt a renewed sense of purpose, as if the tree had awakened the dormant fire within her soul.
+
+Returning to her village, Maya discovered that the real magic was not in the distant tree but in the journey itself. She shared her experiences with the villagers, encouraging them to pursue their dreams with passion and resilience.
+
+Maya's laughter echoed through the village once again, but this time it carried a melody of triumph and inspiration. The old man, who had been watching from the shadows, smiled knowingly, content that his tale had kindled the flame of motivation in yet another seeker.
+
+And so, the village thrived with newfound dreams, each villager inspired by Maya's story to reach for the stars. The legacy of the Tree of Motivation lived on, not in a distant land, but within the hearts of those who dared to believe in the power of their own dreams.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
